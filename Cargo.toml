@@ -1,0 +1,53 @@
+[package]
+name = "rrmqr"
+edition = "2024"
+version = "0.12.2"
+publish = false
+license = "(MIT OR Apache-2.0) AND ISC"
+repository = "https://github.com/Safari77/rrmqr"
+readme = "./README.md"
+keywords = ["qrcode", "rmqr", "detection"]
+description = """
+Detect and read QR and rMQR codes from any image source
+"""
+categories = [
+    "graphics",
+    "encoding",
+]
+include = [
+    "/README.md",
+    "/LICENSE-*",
+    "/src/**/*.rs",
+    "/src/**/*.png",
+]
+
+[features]
+img = ["image"]
+default = ["img"]
+
+[[bench]]
+name = "bench_cap_find"
+path = "benches/bench_cap_find.rs"
+required-features = ["img"]
+harness = false
+
+[dev-dependencies]
+#criterion = "0.5"
+image = { version = "0.25", default-features = false, features = ["png", "jpeg", "gif"] }
+
+[dependencies]
+g2p = "1.0"
+lru = "0.17"
+image = { version = "0.25", optional = true, default-features = false }
+imageproc = "0.26"
+
+[profile.release]
+opt-level = 3
+debug = true
+lto = false
+panic = "abort"
+
+[profile.dev]
+opt-level = 1
+debug = true
+lto = false

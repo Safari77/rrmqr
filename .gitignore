@@ -1,0 +1,9 @@
+/target/
+/bitmap.png
+**/*.rs.bk
+*~
+.*.sw?
+*.orig
+*.rej
+.idea
+/Cargo.lock
