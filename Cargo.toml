@@ -1,7 +1,7 @@
 [package]
 name = "rrmqr"
 edition = "2024"
-version = "0.12.2"
+version = "0.12.3"
 publish = false
 license = "(MIT OR Apache-2.0) AND ISC"
 repository = "https://github.com/Safari77/rrmqr"
